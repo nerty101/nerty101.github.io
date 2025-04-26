@@ -315,27 +315,27 @@
                   {
                       //await Sleep(300);
                       if ((posdef > 0) && (torwnrt < 10) && (wnrtrec == 100) && (cpuwn2 < 2))
-                      outputText(`     Tournament Win Rate:   ${torwnrt.toFixed(2)}`);
+                      outputText(`     Tournament Win Rate:   ${torwnrt.toFixed(2)}%`);
                       if (((posdef > 0) && (torwnrt < 100) && (torwnrt >= 10) && (wnrtrec == 100) && (cpuwn2 < 2)) || ((posdef > 0) && (torwnrt < 100) && (torwnrt < 10) && (wnrtrec < 100) && (wnrtrec >= 10) && (cpuwn2 < 2)))
-                      outputText(`     Tournament Win Rate:  ${torwnrt.toFixed(2)}`);
+                      outputText(`     Tournament Win Rate:  ${torwnrt.toFixed(2)}%`);
                       if (((posdef > 0) && (torwnrt < 1) && (wnrtrec < 1) && (cpuwn2 > 1)) || ((posdef > 0) && (torwnrt >= 10) && (wnrtrec3 < 10) && (cpuwn2 > 1)) || ((posdef > 0) && (torwnrt == 100) && (cpuwn2 < 2)) || ((posdef > 0) && (torwnrt >= 10) && (wnrtrec3 >= 10) && (cpuwn2 > 1)) || ((posdef > 0) && (torwnrt > 0) && (torwnrt < 10) && (wnrtrec3 < 10) && (cpuwn2 > 1)) || ((posdef > 0) && (torwnrt < 100) && (torwnrt >= 10) && (wnrtrec < 100) && (wnrtrec >= 10) && (cpuwn2 < 2)) || ((posdef > 0) && (torwnrt < 100) && (torwnrt < 10) && (wnrtrec < 100) && (wnrtrec < 10) && (cpuwn2 < 2)))
-                      outputText(`     Tournament Win Rate: ${torwnrt.toFixed(2)}`);
+                      outputText(`     Tournament Win Rate: ${torwnrt.toFixed(2)}%`);
                       //await Sleep(300);
                       if (((posdef > 0) && (wnrt > 0)) || ((posdef > 0) && (wnrt < 1) && (cpuwn > 0)))
                       outputText("  ");
                       if (posdef < 1)
                       outputText("     ");
                       if (((wnrtrec3 >= 10) && (wnrt >= 10)) || ((wnrtrec3 < 10) && (wnrt < 10)) || ((wnrtrec3 < 10) && (wnrt >= 10)))
-                      outputText(`Win Rate Total/Avrg: ${wnrt.toFixed(2)}\n`);
+                      outputText(`Win Rate Total/Avrg: ${wnrt.toFixed(2)}%\n`);
                       if ((wnrtrec3 >= 10) && (wnrt < 10))
-                      outputText(`Win Rate Total/Avrg:  ${wnrt.toFixed(2)}\n`);
+                      outputText(`Win Rate Total/Avrg:  ${wnrt.toFixed(2)}%\n`);
                       if (((wnrtrec > wnrtrec3) && (torwnrt >= wnrt) && (wnrtrec >= wnrt) && (wnrtrec >= torwnrt) && (cpuwn2 <= 1)) || ((wnrtrec > wnrtrec3) && (torwnrt <= wnrt) && (wnrtrec >= wnrt) && (wnrtrec >= torwnrt) && (cpuwn2 <= 1)) || ((wnrtrec > wnrtrec3) && (torwnrt < wnrt) && (wnrtrec < wnrt) && (wnrtrec > torwnrt) && (cpuwn2 <= 1)) || ((wnrtrec > wnrtrec3) && (torwnrt < wnrt) && (wnrtrec < wnrt) && (wnrtrec == torwnrt) && (cpuwn2 <= 1)))
                       {
                           //await Sleep(300);
                           if (((torwnrt > 0) && (posdef > 0) && (torwnrt != 100) && (wnrtrec == 100)) || ((torwnrt > 0) && (posdef > 0) && (torwnrt != 100) && (wnrtrec > 0) && (wnrtrec3 < 10)) || ((torwnrt > 0) && (posdef > 0) && (torwnrt != 100) && (wnrtrec != 100) && (wnrtrec3 >= 10)))
-                          outputText(`\n     Tournament Win High: ${wnrtrec.toFixed(2)}`);
+                          outputText(`\n     Tournament Win High: ${wnrtrec.toFixed(2)}%`);
                           if ((torwnrt > 0) && (posdef > 0) && (torwnrt == 100))
-                          outputText(`\n     Tournament Win High: ${wnrtrec.toFixed(2)}`);
+                          outputText(`\n     Tournament Win High: ${wnrtrec.toFixed(2)}%`);
                       }
                   }
                   if (cpuwn2 > 0)
@@ -481,13 +481,13 @@
                           ++b;
                       }
                       if (((a > 0) && (b < 1) && (cpuwn2 >= 1) && (torwnrt > 0) && (torwnrt >= 10) && (wnrtrec3 == 0)) || ((a > 0) && (b < 1) && (cpuwn2 > 1) && (wnrtrec3 < 10) && (torwnrt >= 10) && (wnrtrec3 > 0)))
-                      outputText(`Tournament Low Rate:  ${wnrtrec3.toFixed(2)}\n`);
+                      outputText(`Tournament Low Rate:  ${wnrtrec3.toFixed(2)}%\n`);
                       if (((a > 0) && (b < 1) && (cpuwn2 > 1) && (wnrtrec3 >= 10)) || ((a > 0) && (b < 1) && (cpuwn2 > 1) && (wnrtrec3 < 10) && (torwnrt < 10)) || ((a > 0) && (b < 1) && (cpuwn2 <= 1) && (torwnrt < 1)))
-                      outputText(`Tournament Low Rate: ${wnrtrec3.toFixed(2)}\n`);
+                      outputText(`Tournament Low Rate: ${wnrtrec3.toFixed(2)}%\n`);
                       if (((a < 1) && (b > 0) && (wnrtrec3 >= 10) && (wnrt >= 10)) || ((a < 1) && (b > 0) && (wnrtrec3 < 10) && (wnrt < 10)) || ((a < 1) && (b > 0) && (wnrtrec3 >= 10) && (wnrt < 10)))
-                      outputText(`Tournament Low Rate: ${wnrtrec3.toFixed(2)}\n`);
+                      outputText(`Tournament Low Rate: ${wnrtrec3.toFixed(2)}%\n`);
                       if ((a < 1) && (b > 0) && (wnrtrec3 < 10) && (wnrt >= 10))
-                      outputText(`Tournament Low Rate:  ${wnrtrec3.toFixed(2)}\n`);
+                      outputText(`Tournament Low Rate:  ${wnrtrec3.toFixed(2)}%\n`);
                       prntcor = 0;
                       a = 0;
                       b = 0;
@@ -3958,7 +3958,7 @@
                           outputText("\n     NEW RECORD!\n");
                           if (new9 < 1)
                           outputText("\n");
-                          outputText(`     CPU Tournament Win Rate: ${cpuwnrt.toFixed(2)}\n`);
+                          outputText(`     CPU Tournament Win Rate: ${cpuwnrt.toFixed(2)}%\n`);
                           new9 = 0;
                           cpuwnct = 0;
                           if (new9 < 1)
@@ -4274,7 +4274,7 @@
               }
               if (torwnrt < 100)
               outputText("\n");
-              outputText(`     Tournament Win Rate: ${torwnrt.toFixed(2)}\n\n`);
+              outputText(`     Tournament Win Rate: ${torwnrt.toFixed(2)}%\n\n`);
               wnct6 = 0;
               cpuwn6 = 0;
               wnrt6 = 0;
@@ -4282,16 +4282,16 @@
               cpuwn3 = 0;
               wnrt3 = 0;
               if (torwnrt < 100)
-              outputText(`     Tournament Win High: ${wnrtrec.toFixed(2)}\n\n`);
+              outputText(`     Tournament Win High: ${wnrtrec.toFixed(2)}%\n\n`);
               if (cpwncop > 0)
-              outputText(`     Tournament Low Rate: ${wnrtrec3.toFixed(2)}\n\n`);
+              outputText(`     Tournament Low Rate: ${wnrtrec3.toFixed(2)}%\n\n`);
               if ((cpwncop > 0) || (torwnrt < 100))
               outputText("\n");
               if (diflev > 1)
               {
-                  outputText(`     Win Rate Last Tournament: ${torwnrt2.toFixed(2)}\n\n`);
+                  outputText(`     Win Rate Last Tournament: ${torwnrt2.toFixed(2)}%\n\n`);
               }
-              outputText(`     Win Rate Average: ${wnrt.toFixed(2)}\n\n`);
+              outputText(`     Win Rate Average: ${wnrt.toFixed(2)}%\n\n`);
               if (diflev > 1)
               outputText("\n");
               wnct4 = 0;
