@@ -29,7 +29,7 @@
       height: 100%;
       padding: 10px;
       box-sizing: border-box;
-      font-size: 16px;
+      font-size: 14px;
       resize: none;
       border: none;
       outline: none;
@@ -90,7 +90,13 @@
       // Auto-scroll to the bottom
       textArea.scrollTop = textArea.scrollHeight;
   }
-    
+
+  // Warn user before page reload
+  window.addEventListener("beforeunload", function(event) {
+    event.preventDefault();
+    event.returnValue = ""; // Required for some browsers
+  });
+
   async function waitForButton() {
       return new Promise((resolve) => {
           const buttonNormAttack = document.getElementById('buttonNormAttack');
@@ -509,7 +515,7 @@
                       f2 = 0;
                       g2 = 0;
                       outputText(`     Round ${++ctr}\n\n\n`);
-                      outputText("     Press (N) for Normal Attack   (M) for Magic Heal   (S) for Special Attack\n\n");
+                      outputText("     Choose a move below:\n       (N) for Normal Attack\n       (M) for Magic Heal\n       (S) for Special Attack\n\n");
                       outputText("  ");
                       //scanf (" %c", &choice);
                       let choice = await waitForButton();
