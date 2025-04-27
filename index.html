@@ -85,6 +85,21 @@
   </div>
   
 <script>
+
+  // Resize text if necesary<!DOCTYPE html>
+  const textarea = document.getElementById('textArea');
+  const desiredWidthInCharacters = 50;
+
+  function adjustFontSize() {
+    const parentWidth = textarea.offsetWidth;
+    const newFontSize = parentWidth / desiredWidthInCharacters;
+    textarea.style.fontSize = `${newFontSize}px`;
+  }
+
+  // Adjust font size on page load and window resize
+  window.addEventListener('resize', adjustFontSize);
+  adjustFontSize();
+
   // Append a message to the game log
   function outputText(message) {
       textArea.value += message;
