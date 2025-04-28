@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Text Area with Buttons & Side Counter Panel</title>
+  <title>Text Fighter</title>
   <style>
     html, body {
       margin: 0;
@@ -86,6 +86,26 @@
   
 <script>
 
+function seededRandom() {
+    const seed = new Date().getTime();
+    let s = seed % 2147483647; // Use a prime number to limit the range of seed
+    if (s <= 0) s += 2147483646;
+    
+    return function() {
+        for(i=0;i<100;i++) {
+            s = (s * 16807) % 2147483647; // A common linear congruential generator formula
+        }
+        return (s - 1) / 2147483646; // Normalize to a range of [0, 1)
+    };
+}
+
+// Seed the generator with the current time
+let randomNumberGenerator = seededRandom();
+
+// Generate random numbers
+console.log(randomNumberGenerator()); // Example output: 0.453276
+console.log(randomNumberGenerator()); // Example output: 0.823692
+
   // Resize text if necesary<!DOCTYPE html>
   const textarea = document.getElementById('textArea');
   const desiredWidthInCharacters = 50;
@@ -140,7 +160,7 @@
   }
 
   function rand() {
-    return Math.floor(Math.random()*360);
+    return Math.floor(randomNumberGenerator()*360);
   }
 
   function clearOutputTextArea() {
