@@ -2915,6 +2915,16 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                       magsp4 = 0;//*THIS IS TO STOP MAGIC SP AND SPECIAL BON FROM PRINTING AT SAME TIME.
                       if (playerhp < 1)
                       outputText("\n");
+                      
+                      if ((emagsup > 0) || (emagsup5 > 0))///new 06112025
+                      {
+                        diceR = (rand() % 6) + 1;
+                        if (diceR == 1)
+                        {
+                            emagsup = 0;
+                            emagsup5 = 0;
+                        }
+                      }///new 06112025 end
                       if ((enemyhp > 0) && (playerhp > 0) && (cpusp == 0))
                       {
                           diceB = (rand() % 10) + 1;// 10
@@ -3088,7 +3098,7 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                           spdup = 0;
                           ultdup = 0;
                       }
-                      if (emagsup > 0)
+                      if ((emagsup > 0) || (emagsup5 > 0))
                       {
                           supdup = 0;
                           supdup2 = 0;
@@ -3243,15 +3253,15 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                               diceM = 0;
                               diceR = 0;
                           }
-                          if ((supspatt2 < 1) || (diceM < 41) || (f > 0) || (e < 1) || (d > 0))
+                          if ((supspatt2 < 1) || (diceM < 41) || (f > 0) || (e < 1) || (d > 0) || (emagsup > 0) || (emagsup5 > 0))
                           {
                               magdup = 0;
                           }
-                          if ((spatt2 < 1) || (diceM < 41) || (f > 0) || (e > 0) || (d < 1))
+                          if ((spatt2 < 1) || (diceM < 41) || (f > 0) || (e > 0) || (d < 1) || (emagsup > 0) || (emagsup5 > 0))
                           {
                               magdup2 = 0;
                           }
-                          if (((diceM > 40) && (diceB >= 4) && (diceB <= 6)) && (playerhp > 0) && (hypsp2 < 1))/// && (enspcomb6 < 1))?????????????????
+                          if (((diceM > 40) && (diceB >= 4) && (diceB <= 6)) && (playerhp > 0) && (hypsp2 < 1))
                           {
                               {
                                   ++g;
@@ -3299,6 +3309,7 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                                   if (diceR == 1)
                                   {
                                       emagsup = 0;
+                                      emagsup5 = 0;
                                   }
                                   if (playerhp < 1)
                                   {
@@ -3387,11 +3398,11 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                                       emgspcom4 = 0;
                                       emgspcom3 = 1;
                                   }
-                                  if ((diceN < 41) || (f > 0) || (e > 0) || (d > 0) || (mspatt3 < 1) || (mspatt4 < 1))
+                                  if ((diceN < 41) || (f > 0) || (e > 0) || (d > 0) || (mspatt3 < 1) || (mspatt4 < 1) || (emagsup < 1))
                                   {
                                       magdup3 = 0;
                                   }
-                                  if ((emgspcom4 == 1) && (f < 1) && (e < 1) && (d < 1) && ((diceN > 40) && (diceB >= 4) && (diceB <= 6)) && ((diceM > 40) && (diceB >= 4) && (diceB <= 6)) && ((mspatt3 > 0) && (mspatt4 > 0)))
+                                  if ((emgspcom4 == 1) && (f < 1) && (e < 1) && (d < 1) && ((diceN > 40) && (diceB >= 4) && (diceB <= 6)) && ((diceM > 40) && (diceB >= 4) && (diceB <= 6)) && ((mspatt3 > 0) && (mspatt4 > 0)) && (emagsup > 0))
                                   {
                                       ++magdup3;
                                       if (magdup3 == 1)
@@ -3430,11 +3441,11 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                                           outputText("     AND A STUNNING MAGIC VICTORY!\n\n");
                                       }
                                   }
-                                  if ((diceP < 41) || (f > 0) || (e > 0) || (d > 0) || (mspatt3 < 1) || (mspatt4 < 1) || (mspatt5 < 1))
+                                  if ((diceP < 41) || (f > 0) || (e > 0) || (d > 0) || (mspatt3 < 1) || (mspatt4 < 1) || (mspatt5 < 1) || (emagsup < 1) || (emagsup5 < 1))
                                   {
                                       magdup4 = 0;
                                   }
-                                  if ((emgspcom3 == 1) && (f < 1) && (e < 1) && (d < 1) && ((diceP > 40) && (diceB >= 4) && (diceB <= 6)) && ((diceN > 40) && (diceB >= 4) && (diceB <= 6)) && ((diceM > 40) && (diceB >= 4) && (diceB <= 6)) && ((mspatt3 > 0) && (mspatt4 > 0) && (mspatt5 > 0)))
+                                  if ((emgspcom3 == 1) && (f < 1) && (e < 1) && (d < 1) && ((diceP > 40) && (diceB >= 4) && (diceB <= 6)) && ((diceN > 40) && (diceB >= 4) && (diceB <= 6)) && ((diceM > 40) && (diceB >= 4) && (diceB <= 6)) && ((mspatt3 > 0) && (mspatt4 > 0) && (mspatt5 > 0)) && (emagsup > 0) && (emagsup5 > 0))
                                   {
                                       ++magdup4;
                                       if (magdup4 == 1)
@@ -3457,9 +3468,13 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                                       outputText("     THE CPU IS IN OVERDRIVE!\n\n");
                                       if (diceQ == 3)
                                       outputText("     THE CPU CONTROLS THE CONTEST!\n\n");
-                                      emagsup = 0;
-                                      emagsup5 = 0;
                                       emgspcom3 = 0;
+                                      diceR = (rand() % 2) + 1;//5 7 16
+                                      if (diceR == 1)
+                                      {
+                                          emagsup = 0;
+                                          emagsup5 = 0;
+                                      }
                                       if (playerhp < 1)
                                       {
                                           diceQ = (rand() % 3) + 1;
@@ -3469,6 +3484,8 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                                           outputText("     THE CPU IS INVINCIBLE!\n\n");
                                           if (diceQ == 3)
                                           outputText("     THE ULTIMATE CPU FINISHER!\n\n");
+                                          emagsup = 0;
+                                          emagsup5 = 0;
                                       }
                                   }
                               }
@@ -4084,7 +4101,7 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
                               outputText("     Make another attempt!\n\n");
                           }
                           //outputText("\n     Enter (0) to exit - any other key to continue\n\n\n");
-                          outputText("\n     Press any button to continue.\n\n\n");
+                          outputText("\n     Press any button to continue!\n\n\n");
                           const dontMatter = await waitForButton();
                           clearOutputTextArea();
                           //scanf( " %d", &ans6);
@@ -4390,7 +4407,7 @@ console.log(randomNumberGenerator()); // Example output: 0.823692
               cpuwn8 = 0;
           }
           //outputText("\n     Enter (0) to exit - any other key to continue\n\n\n");
-          outputText("\n     Press any button to continue.\n\n\n");
+          outputText("\n     Press any button to continue!\n\n\n");
           const dontMatter2 = await waitForButton();
           clearOutputTextArea();
           //scanf( " %c", &ans);
